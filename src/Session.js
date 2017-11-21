@@ -43,6 +43,7 @@ Session.propTypes = {
   user: PropTypes.shape({
     id: PropTypes.string,
   }).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   options: PropTypes.any.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
