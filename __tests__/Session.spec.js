@@ -19,9 +19,7 @@ describe('Session Component', () => {
     close: jest.fn(),
   };
 
-  const mockConnector = (user, options, dispatch) => {
-    return mockClient;
-  };
+  const mockConnector = () => mockClient;
 
   const Child = createChild();
 
@@ -39,12 +37,8 @@ describe('Session Component', () => {
   });
 
   it('should add the session to the child context', () => {
-    const user = { id: 'id' };
-    const options = { foo: 'bar' };
-    const dispatch = jest.fn();
-
     const tree = renderer.create((
-      <Session connector={mockConnector} user={user} options={options} dispatch={dispatch}>
+      <Session connector={mockConnector}>
         <Child />
       </Session>
     ));

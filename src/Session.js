@@ -15,13 +15,8 @@ class Session extends Component {
   }
 
   async componentWillMount() {
-    const {
-      connector,
-      user,
-      dispatch,
-      options,
-    } = this.props;
-    this.client = connector(user, options, dispatch);
+    const { connector } = this.props;
+    this.client = connector();
   }
 
   componentWillUnmount() {
@@ -40,12 +35,6 @@ Session.childContextTypes = {
 Session.propTypes = {
   connector: PropTypes.func.isRequired,
   children: PropTypes.element.isRequired,
-  user: PropTypes.shape({
-    id: PropTypes.string,
-  }).isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  options: PropTypes.any.isRequired,
-  dispatch: PropTypes.func.isRequired,
 };
 
 export default Session;
