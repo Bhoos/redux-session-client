@@ -2,9 +2,9 @@ import React, { Component, Children } from 'react';
 import PropTypes from 'prop-types';
 import renderer from 'react-test-renderer';
 
-import { connectSession } from '../src';
+import { withSession } from '../src';
 
-describe('connectSession', () => {
+describe('withSession', () => {
   class SessionMock extends Component {
     getChildContext() {
       return { sessionExecute: this.props.execute };
@@ -26,7 +26,7 @@ describe('connectSession', () => {
   }
 
   it('should receive the the session', () => {
-    const Container = connectSession(['fn1', 'fn2'])((
+    const Container = withSession(['fn1', 'fn2'])((
       props => (
         <Passthrough {...props} />
       )

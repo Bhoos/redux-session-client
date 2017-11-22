@@ -1,7 +1,7 @@
 import Session from './Session';
-import connectSession from './connectSession';
+import withSession from './withSession';
 
 export {
   Session,
-  connectSession,
+  withSession,
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function connectSession(names) {
+export default function withSession(names) {
   const session = context => names.reduce((res, name) => ({
     ...res,
     [name]: (...args) => context.sessionExecute(name, args),
