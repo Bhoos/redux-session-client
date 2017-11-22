@@ -1,6 +1,6 @@
 {
   "name": "redux-session-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React binding for redux-session-server client interface",
   "main": "__dist__/index.js",
   "files": [
